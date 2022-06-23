@@ -1,0 +1,18 @@
+############################################################################
+# Pager
+#   FvwmPager can actually be configured to look a bit more like
+#   4dwm's desk overview, but I like the default compact look better.
+############################################################################
+*FvwmPager: Geometry 383x120-0-36
+*FvwmPagerLabel FvwmPager
+*FvwmPagerSmallFont "-*-helvetica-medium-r-*-*-8-*-*-*-*-*-*-*"
+*FvwmPager: LabelsAbove
+*FvwmPager: NoMiniIcons
+*FvwmPagerFont "-*-helvetica-bold-o-*-*-12-*-*-*-*-*-*-*"
+*FvwmPager: Window3DBorders
+*FvwmPager: WindowBorderWidth 2
+*FvwmPager: Balloons All
+*FvwmPager: BalloonYOffset +2
+*FvwmPager: BalloonBorderWidth 1
+*FvwmPager: UseSkipList
+*FvwmPager: DeskHilight

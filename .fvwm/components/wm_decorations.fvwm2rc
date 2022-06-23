@@ -1,0 +1,31 @@
+# border width 7 seems to be a good approximation of 4dwm,
+# althought fvwm doesn't do the nice 4dwm dither of the 3d bevels.
+Style "*" BorderWidth 7, HandleWidth 7
+
+# FVWM
+Style *             Title, Handles, !MWMFunctions, MWMButtons, NoDecorHint, Lenience, DecorateTransient
+Style "Fvwm*"		NoTitle, Sticky, WindowListSkip, NoHandles, BorderWidth 7
+Style "FvwmPager"             Title, Handles, !MWMFunctions, NoDecorHint, Lenience
+
+# various apps
+Style "xload"		NoTitle, Sticky, WindowListSkip, NoHandles, FPLenient, BorderWidth 7
+Style "*lock"		NoTitle, Sticky, WindowListSkip, NoHandles, BorderWidth 7
+Style "stalonetray"		NoTitle, Sticky, WindowListSkip, NoHandles, BorderWidth 7
+Style "audacious"		NoTitle, Sticky, NoHandles, BorderWidth 0
+Style "Chromium"        Title, Handles, !MWMFunctions, NoDecorHint
+Style "Wine"         Title, Handles, !MWMFunctions, NoDecorHint
+Style "Panther"         NoTitle, Sticky, NoHandles, BorderWidth 7, PositionPlacement center, NoPPosition, NoUSPosition
+Style "Onboard" NeverFocus
+
+# SGI-Style "flat" window buttons, close/minimize/maximize
+# These are ripped from somewhere on the net, I wish I remember from where and could give credit.
+ButtonStyle 2 Vector 9 0+5px100-6p@3 100-7px100-6p@3 100-7px-0+4p@3 0+5px0+4p@3 0+5px100-5p@3 0+7px100-5p@2 0+8px100-5p@3 100-6px100-5p@3 100-6px-0+6p@3
+ButtonStyle 4 Vector 9 50-2px50+1p@3 50+2px50+1p@3 50+2px50-3p@3 50-2px50-3p@3 50-2px50+2p@3 50-0px50+2p@2 50-0px50+2p@3 50+3px50+2p@3 50+3px50-1p@3
+ButtonStyle 1 Vector 9 0+4px50+1p@3 100-6px50+1p@3 100-6px50-2p@3 0+4px50-2p@3 0+4px50+2@3 0+5px50+2p@2 0+6px50+2p@2 100-5px50+2p@3 100-5px50@3
+
+WindowFont              "-*-helvetica-bold-o-*-*-14-*-*-*-*-*-*"
+TitleStyle LeftJustified
+
+# Generic menu style
+MenuStyle Mwm
+MenuStyle "*" Font -*-helvetica-bold-o-*-*-12-*-*-*-*-*-*

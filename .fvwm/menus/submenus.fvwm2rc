@@ -1,0 +1,40 @@
+# add more apps with the syntax `+ "Label" <command> &`...
+
+#------- "System" menu ------------#
+AddToMenu SysMenu
+	+	"File Manager"	exec exo-open --launch FileManager &
+	Test (x pavucontrol)  +	"PulseAudio Control Panel" exec pavucontrol &
+	Test (x alsamixer)    +	"ALSA Mixer" exec $FVWM_TERMINAL $FVWM_TERMINAL_EXEC_CMD alsamixer &
+	+	"" 			Nop
+	+	"Restart FVWM"	Restart fvwm2
+	+ 	"Exit"		Popup ExitMenu
+
+#------- "Exit" menu ------------#
+# suspend assumes you're using systemd
+AddToMenu ExitMenu
+	+ 	"Log Out"		Popup QuitMenu
+	+	"Suspend"	Exec systemctl suspend
+	+	"Shut Down"	Exec poweroff
+	+	"Reboot"	Exec reboot
+
+#------- Confirm quitting X ------------#
+AddToMenu QuitMenu "Really quit?" Title
+	+   "Yeah" Quit
+	+   "No"  Nop
+
+#------- "Internet" menu ------------#
+AddToMenu SurfMenu
+	+	"Web Browser"	exec exo-open --launch WebBrowser
+
+## Various utilities and applications menu
+AddToMenu UtilsMenu
+	Test (x galculator)	    +   "Calculator"            exec galculator &
+	Test (x qalculate-gtk)	+   "Scientific Calculator" exec qalculate-gtk &
+
+## Graphics programs menu
+AddToMenu GfxMenu
+	Test (x gimp) +	"GIMP"		exec gimp &
+
+## Music software menu
+AddToMenu MusicMenu
+	Test (x audacious)	+	"Audacious "			exec audacious &

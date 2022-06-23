@@ -1,0 +1,10 @@
+AddToMenu RootMenu
+	+ "Workspace Menu "  Title
+	+ "Terminal " exec $FVWM_TERMINAL &
+	+ "" 			Nop
+	+ "Internet "	Popup SurfMenu
+	+ "Graphics "	Popup GfxMenu
+	+ "Music "	Popup MusicMenu
+	+ "Utils "	Popup UtilsMenu
+	+ "System "	Popup SysMenu
+	Test (x panther_launcher) + "All Apps " exec panther_launcher &

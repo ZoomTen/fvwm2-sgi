@@ -1,0 +1,37 @@
+IconFont              "-*-helvetica-medium-r-*-*-14-*-*-*-*-*-*-*"
+
+# icon box
+# XXX: you may need to adjust the size here
+Style * IconBox 1680x305+135+6, IconGrid 1 1, IconFill Left Top
+Style * IconSize 90 70 -1 -1
+Style * IconBackgroundRelief 2
+Style * IconBackgroundPadding 2
+Style * IconBackgroundRelief 2
+
+## Set path to icons and pixmaps
+ImagePath $HOME/.fvwm/icons:+
+
+# A few icons ripped from SGI screenshots
+Style "*" Icon iconbox/generic.png
+
+# generic icons
+Style "FvwmPager"       IconOverride, Icon iconbox/iconbox.png
+
+# terminal icons
+Style "Xfce4-terminal"	IconOverride, Icon iconbox/term.png
+Style "qterminal"		IconOverride, Icon iconbox/term.png
+Style "*rxvt"			IconOverride, Icon iconbox/term.png
+Style "st"				IconOverride, Icon iconbox/term.png
+Style "Nvidia-settings" IconOverride, Icon iconbox/nvidia.png
+Style "XOsview"         IconOverride, Icon iconbox/sysmon.png
+Style "Blender"         IconOverride, Icon iconbox/Blender.png
+Style "xfontsel"        IconOverride, Icon iconbox/xfontsel.png
+Style "Audacious"       IconOverride, Icon iconbox/xmms.png
+Style "Pavucontrol"     IconOverride, Icon iconbox/mixer.png
+Style "Galculator"      IconOverride, Icon iconbox/Gcalctool.png
+
+# text editors
+Style "*NEdit"          IconOverride, Icon iconbox/textedit.png
+
+# file managers
+Style "Thunar"          IconOverride, Icon iconbox/filemanager.png

@@ -1,0 +1,50 @@
+############################################################################
+# Keyboard bindings
+############################################################################
+
+# Don't refuse if I accidentally have NumLock and ScrollLock on!
+IgnoreModifiers L25
+
+# Move between pages (Super+{up, down, left, right})
+Key Left	A	4	Scroll -100 0
+Key Right	A	4	Scroll +100  +0
+Key Up		A	4	Scroll +0 -100
+Key Down	A	4	Scroll +0 +100
+
+# Move between desktops (Ctrl+Super+{up, down})
+Key Left		A	C4	GotoDesk -1 0 2
+Key Right	A	C4	GotoDesk  1 0 2
+
+## Fast Super-Tab
+Key Tab A 4 WindowList Root c c CurrentDesk, NoGeometry, CurrentAtEnd, IconifiedAtEnd, NoIcons
+
+# Fast page switch (Super+{1..6})
+Key	1	A	S4	GotoPage 0 0
+Key	2	A	S4	GotoPage 1 0
+Key	3	A	S4	GotoPage 0 1
+Key	4	A	S4	GotoPage 1 1
+Key	5	A	S4	GotoPage 0 2
+Key	6	A	S4	GotoPage 1 2
+
+# Fast desktop switch (Shift+Super+{1..9)
+Key	1	A	4	GotoDesk 0 0
+Key	2	A	4	GotoDesk 0 1
+Key	3	A	4	GotoDesk 0 2
+Key	3	A	4	GotoDesk 0 3
+Key	4	A	4	GotoDesk 0 4
+Key	5	A	4	GotoDesk 0 5
+Key	6	A	4	GotoDesk 0 6
+Key	7	A	4	GotoDesk 0 7
+Key	8	A	4	GotoDesk 0 8
+Key	9	A	4	GotoDesk 0 9
+
+# Close a window (Super+Q)
+Key Q	A	4 Close
+
+# Iconify a window (Super M)
+Key M	W	4 Iconify
+Key M	I	4 TileIcons
+
+# Thumbnail overrides for iconify
+Key ("Chromium") M	W	4 Thumbnail
+Key ("Chromium") M	I	4 DeThumbnail

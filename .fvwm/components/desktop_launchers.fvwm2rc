@@ -1,0 +1,56 @@
+# FvwmButtons icon launcher:
+DestroyFunc Launcher
+AddToFunc Launcher
++ I DestroyModuleConfig $0Launch: *
++ I *$0Launch: Geometry 80x75
++ I *$0Launch: Columns 1
++ I *$0Launch: Rows    4
++ I *$0Launch: Frame   0
++ I *$0Launch: Back    transparent
++ I *$0Launch: (1x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
++ I *$0Launch: Pixmap none
++ I *$0Launch: (1x1+0+3, Font "-adobe-helvetica-medium-o-normal--14-140-75-75-p-78-iso8859-1", \
+                Colorset 12, Title $0, Action (Mouse 1) `Exec exec $2`)
++ I Style $0Launch HandleWidth 0, NoTitle, WindowListSkip
+# do the stuff i guess iunno
++ I Module FvwmButtons -g "-$[LAUNCHER_OFFSET_FROM_RIGHT]+$[LAUNCHER_OFFSET_FROM_TOP]" $0Launch
++ I UpdateStyles
+# calculate next launcher offset
++ I PipeRead `printf "SetEnv LAUNCHER_OFFSET_FROM_TOP "; expr $[LAUNCHER_OFFSET_FROM_TOP] + 100`
+
+DestroyFunc NextLauncherColumn
+AddToFunc NextLauncherColumn
++ I PipeRead `printf "SetEnv LAUNCHER_OFFSET_FROM_RIGHT "; expr $[LAUNCHER_OFFSET_FROM_RIGHT] + 90`
++ I PipeRead `printf "SetEnv LAUNCHER_OFFSET_FROM_TOP $[LAUNCHER_OFFSET_FROM_TOP_INIT]"`
+
+# initialize position
+	SetEnv LAUNCHER_OFFSET_FROM_RIGHT_INIT "-70"
+	SetEnv LAUNCHER_OFFSET_FROM_TOP_INIT   "10"
+	SetEnv LAUNCHER_OFFSET_FROM_RIGHT $[LAUNCHER_OFFSET_FROM_RIGHT_INIT]
+
+# ------------ begin desktop launchers -----------------------------------
+
+# format: Launcher [name] [launcher image relative to ~/.fvwm/icons/] [terminal command]
+
+	NextLauncherColumn
+	Launcher desktop    launchers/desktop.png  "exo-open --launch FileManager $(xdg-user-dir DESKTOP)"
+	Launcher home       launchers/folder.png   "exo-open --launch FileManager ~"
+	Launcher UnixRoot   launchers/folder.png   "exo-open --launch FileManager /"
+	Launcher dumpster   launchers/dumpster.png "exo-open --launch FileManager trash://"
+	
+	Test (x xosview) \
+		Launcher Xosview    launchers/xosview.png  "xosview"
+	Test (x galculator) \
+		Launcher calculator launchers/xcalc.png    "galculator"
+	Test (x xnedit) \
+		Launcher Xnedit      launchers/nedit.png    "xnedit"
+	Test (x featherpad) \
+		Launcher FeatherPad launchers/jot.png      "featherpad"
+
+# -- if you feel that your screen can't hold so many icons, make a new column --
+	# NextLauncherColumn
+	# Launcher ...
+	# Launcher ...
+	# Launcher ...
+
+# etc...

@@ -1,0 +1,31 @@
+# 4dwm-like colors
+Style * Color black gray50
+Style *	HilightFore black
+Style * HilightBack #A59F80
+Colorset 11 fg black, bg gray80
+Colorset 12 fg #111111, bg gray60
+Colorset 17 fg black, bg #808080, pixmap overlay.png
+*FvwmPagerBack gray65
+*FvwmPagerFore black
+*FvwmPagerHilight White
+
+# dark mode
+# if using this config, make sure to change icons/toolIcon.xpm
+# use a text editor to open it and change the line that says ".	c black" to ". c white"
+#Style * Color white gray20
+#Style *	HilightFore white
+#Style * HilightBack #304F55
+#Colorset 11 fg white, bg gray30
+#Colorset 12 fg white, bg gray20
+#Colorset 17 fg white, bg gray30, pixmap overlay.png
+#*FvwmPagerBack gray40
+#*FvwmPagerFore black
+#*FvwmPagerHilight White
+
+# Components
+MenuStyle * MenuColorset 11
+*Toolchest: Colorset 11
+*FvwmPager: WindowColorsets 17 2
+
+# Icons
+Style * IconBackgroundColorset 17

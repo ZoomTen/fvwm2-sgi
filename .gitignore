@@ -1,0 +1,3 @@
+.local/share/fonts/**/.uuid
+.fvwm/.thumbs/**/*.png
+.fvwm/.thumbs/**/*.xpm

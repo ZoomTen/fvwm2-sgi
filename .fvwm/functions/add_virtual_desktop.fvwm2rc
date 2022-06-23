@@ -1,0 +1,6 @@
+SetEnv FVWM_DESKTOP_UPPERBOUND -1
+
+DestroyFunc AddDesktop
+AddToFunc AddDesktop
++ I PipeRead `printf "SetEnv FVWM_DESKTOP_UPPERBOUND "; expr $[FVWM_DESKTOP_UPPERBOUND] + 1`
++ I DesktopName $[FVWM_DESKTOP_UPPERBOUND] $0

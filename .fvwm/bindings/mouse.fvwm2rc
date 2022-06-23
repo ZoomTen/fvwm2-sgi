@@ -1,0 +1,54 @@
+############################################################################
+# Mouse bindings
+############################################################################
+
+## The below line will disable the root menu completely
+#Mouse 1	R   	A       Nop
+
+## Enable root menu by left click
+Mouse 1		R   	A       Menu RootMenu Nop
+
+# Right click for window ops menu
+# Middle click for window list 
+Mouse 3		R    	A       Menu Window-Ops Nop
+Mouse 2		R    	A      	WindowList NoIcons
+
+# Left click is the Window-Ops2 menu, right is iconify, rightmost is maximize
+Mouse 0		1       A       Menu Window-Ops2 Close
+Mouse 0		2    	A     	Maximize
+Mouse 0		4    	A     	Iconify
+
+# Left click in Frame or Sides is a resize-or-raise
+# and on Top does a move-or-raise
+Mouse 1 	FS      A       Resize-or-Raise
+Mouse 1		T       A       Maximize-or-Move
+
+# Left click in an Icon is de-iconify
+Mouse 1		I       A       TileIcons
+
+# Middle click in Corners/Sides/Titlebar gets Ops Menu
+Mouse 2 	FST     A       Menu Window-Ops2 Nop
+
+# Right mouse click toggles raise-lower on anything
+Mouse 3 	TSIF    A       RaiseLower
+
+# Click-and-drag to move (LMB) and resize (RMB) with Super
+# Clicking simply raises the windo
+DestroyFunc DragNMoveWithRaise
+AddToFunc DragNMoveWithRaise
++ H Raise
++ H Move
+Mouse 1 W 4 DragNMoveWithRaise
+
+DestroyFunc DragNMoveWithoutRaise
+AddToFunc DragNMoveWithoutRaise
++ H Move
+Mouse 1 W C4 DragNMoveWithoutRaise
+
+DestroyFunc DragNSize
+AddToFunc DragNSize H Resize
+Mouse 3 W 4 DragNSize
+
+# Thumbnail overrides for iconify
+Mouse ("Chromium") 1		I       A       DeThumbnail
+Mouse ("Chromium") 0		4    	A     	Thumbnail

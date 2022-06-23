@@ -1,0 +1,21 @@
+Exec rm ~/.fvwm/.thumbs/*.png
+
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I ThisWindow (Shaded) WindowShade toggle
++ I Schedule 800 Raise 
++ I Raise
++ I Piperead "xwd -silent -id $[w.id] > $[HOME]/.fvwm/.thumbs/icon.tmp.$[w.id].xwd"
++ I ThisWindow (Iconifiable, !Iconic) PipeRead `nice -n 19 convert -resize 90x70 \
+    -frame 1x1 -mattecolor black -quality 0 xwd:$[HOME]/.fvwm/.thumbs/icon.tmp.$[w.id].xwd \
+    png:$[HOME]/.fvwm/.thumbs/icon.tmp.$[w.id].png ; rm $[HOME]/.fvwm/.thumbs/icon.tmp.$[w.id].xwd`
++ I ThisWindow WindowStyle IconOverride, Icon $[HOME]/.fvwm/.thumbs/icon.tmp.$[w.id].png
++ I Iconify
+
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I DestroyWindowStyle
++ I Exec rm -f $HOME/.fvwm/.thumbs/icon.tmp.$[w.id].*
++ I TileIcons
+
+# To see which applications thumbnail icon should override, see bindings/*.

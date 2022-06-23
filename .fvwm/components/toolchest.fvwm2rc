@@ -1,0 +1,21 @@
+Style Toolchest Title, !Handles, BorderWidth 2, !Button 1, !Button 2, !Button 4, !Closable, Sticky, !StickyStippledTitle, WindowListSkip, !Closable
+Style FvwmButtons Title, !Handles, !Button 1, !Button 2, !Button 4, Sticky, !StickyStippledTitle, WindowListSkip, !Closable
+*Toolchest: Columns 1
+*Toolchest: Rows 6
+*Toolchest: BoxSize smart
+*Toolchest: Padding 11 0
+*Toolchest: Frame 1
+*Toolchest: Font "-*-helvetica-bold-*-*-*-14-*-*-*-*-*-*-*"
+*Toolchest: ButtonGeometry 120x26+5+5
+*Toolchest: (Right, Title (Side, Left) "System ", Icon toolIcon.xpm, Action (Mouse 1) \
+    	`Menu SysMenu rectangle $widthx$height+$left+$top  +$widthp-5p +1p`)
+*Toolchest: (Right, Icon toolIcon.xpm, Title (Side, Left) "Graphics ", Action (Mouse 1) \
+	`Menu GfxMenu rectangle $widthx$height+$left+$top +$widthp-5p +1p`)
+*Toolchest: (Right, Icon toolIcon.xpm, Title (Side, Left) "Utilities ", Action (Mouse 1) \
+    	`Menu UtilsMenu rectangle $widthx$height+$left+$top  +$widthp-5p +1p`)
+*Toolchest: (Right, Icon toolIcon.xpm, Title (Side, Left) "Internet ", Action (Mouse 1) \
+    	`Menu SurfMenu rectangle $widthx$height+$left+$top  +$widthp-5p +1p`)
+*Toolchest: (Right, Title (Side, Left) "Music ", Icon toolIcon.xpm, Action (Mouse 1) \
+    	`Menu MusicMenu rectangle $widthx$height+$left+$top  +$widthp-5p +1p`)
+*Toolchest: (Right, Title (Side, Left) "Terminal ", Action (Mouse 1) \
+    	`exec $FVWM_TERMINAL &`)

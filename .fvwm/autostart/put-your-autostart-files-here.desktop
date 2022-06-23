@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Desktop Item
+Comment=You can paste whatever app you want to autostart in ~/.fvwm/autostart, from /usr/share/applications or write your own. Remember to delete this file after doing so.
+Terminal=false
+Type=Application

@@ -1,0 +1,32 @@
+############################################################################
+# Window operations menus
+############################################################################
+
+# Menu for window operations
+AddToMenu Window-Ops
+	+ "  Select a window to...  "    Title
+	+ "Move "          Move-or-Raise2
+	+ "Resize "        Resize-or-Raise2
+	+ "Raise "         Raise
+	+ "Lower "         Lower
+	+ "(De)Iconify "   Iconify
+	+ "(Un)Stick "     Stick
+	+ "(Un)Maximize "  Maximize
+	+ ""              Nop
+	+ "Delete "        Delete
+	+ "Close "         Close
+	+ "Destroy "       Destroy
+	+ ""              Nop
+	+ "Identify"            Module FvwmIdent
+	+ "Refresh Screen " Refresh
+
+# Menu for top left hand ("close") button on windows
+AddToMenu Window-Ops2
+	+			"Raise/Lower "   RaiseLower
+	+                       "Iconify "       Iconify
+	+                       "(Un)Stick "     Stick
+	+                       ""              Nop
+	+                       "Delete "        Delete
+	+                       "Close "         Close
+	+                       "Destroy "       Destroy
+

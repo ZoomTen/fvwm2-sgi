@@ -1,0 +1,92 @@
+# 4dwm-esque split-theme
+
+#------ Default stuff -------#
+SetEnv	FVWM_TERMINAL          "exo-open --launch TerminalEmulator"
+SetEnv	FVWM_TERMINAL_EXEC_CMD ""
+
+#------ Helper functions -------#
+
+Read $./functions/add_virtual_desktop.fvwm2rc
+Read $./functions/thumbnail_override.fvwm2rc
+
+#------ Desktop settings -------#
+
+# Page size
+DesktopSize 2 2
+
+# Desktop names
+AddDesktop "Personal"
+AddDesktop "Work"
+AddDesktop "Etc."
+
+EdgeScroll 0 0
+
+#------ Behavior -------#
+# Keep the last focus while in root window
+Style "*" SloppyFocus
+
+# Click/release must occur in <n milliseconds to be a "click"
+ClickTime 10
+
+# Always use solid window moving
+OpaqueMoveSize -1
+
+# Window placement
+Style "*" DumbPlacement
+
+#------------------------#
+
+Read $./components/wm_decorations.fvwm2rc
+Read $./components/wm_controls.fvwm2rc
+
+Read $./menus/window_ops.fvwm2rc
+Read $./menus/submenus.fvwm2rc
+Read $./menus/root.fvwm2rc
+
+Read $./components/toolchest.fvwm2rc
+Read $./components/icons.fvwm2rc
+Read $./components/pager.fvwm2rc
+
+Read $./bindings/mouse.fvwm2rc
+Read $./bindings/keyboard.fvwm2rc
+
+Read $./components/colors.fvwm2rc
+
+Read $./components/autostart_components.fvwm2rc
+Read $./components/desktop_launchers.fvwm2rc
+
+#--------- Autostart ----------#
+
+# automatically autostart all desktop items in the autostart folder
+AddToFunc "InitFunction"
++ I Exec for item in ~/.fvwm/autostart/*.desktop; do exo-open "$item"; done
+
+# add enhancement apps that don't need to have their own desktop files
+AddToFunc "InitFunction"
+
+# ----digital clock----
+
++ I Exec xclock -digital -strftime "%Y.%m.%d, %H:%M.%S" -update 1 -bg gray -face "Helvetica 18:Bold:pixelsize=21" -geometry +0-0 &
+
+# dark mode
+#+ I Exec xclock -digital -strftime "%Y.%m.%d, %H:%M.%S" -update 1 -bg black -fg white -face "Helvetica 18:Bold:pixelsize=21" -geometry +0-0 &
+
+# ----import xfce4 settings----
+
+Test (x xfsettingsd) + I Exec xfsettingsd &
+Test (x xfce4-power-manager) + I Exec xfce4-power-manager &
+
+# ----tray----
+
++ I Exec stalonetray -geometry "16x1-14-14" --kludges=force_icons_size &
+
+# dark mode
+
+#+ I Exec stalonetray -geometry "16x1-14-14" -bg "#222" --kludges=force_icons_size &
+
+# ----background----
+
+# xsetroot will be used as a fallback
++ I Exec xsetroot -solid "#4c719e"
+
+Test (x hsetroot) + I Exec hsetroot -tile "$HOME/.fvwm/wallpapers/Scatter Blue.png" &

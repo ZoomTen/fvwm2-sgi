@@ -1,0 +1,8 @@
+AddToFunc "InitFunction"
++ I Module FvwmPager 0 $[FVWM_DESKTOP_UPPERBOUND]
++ I Module FvwmButtons Toolchest
+
+# Restart Toolchest and Pager on WM restart
+AddToFunc "RestartFunction"
++ I Module FvwmPager 0 $[FVWM_DESKTOP_UPPERBOUND]
++ I Module FvwmButtons Toolchest
