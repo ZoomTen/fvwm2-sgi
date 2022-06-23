@@ -30,13 +30,12 @@ Key	6	A	S4	GotoPage 1 2
 Key	1	A	4	GotoDesk 0 0
 Key	2	A	4	GotoDesk 0 1
 Key	3	A	4	GotoDesk 0 2
-Key	3	A	4	GotoDesk 0 3
-Key	4	A	4	GotoDesk 0 4
-Key	5	A	4	GotoDesk 0 5
-Key	6	A	4	GotoDesk 0 6
-Key	7	A	4	GotoDesk 0 7
-Key	8	A	4	GotoDesk 0 8
-Key	9	A	4	GotoDesk 0 9
+Key	4	A	4	GotoDesk 0 3
+Key	5	A	4	GotoDesk 0 4
+Key	6	A	4	GotoDesk 0 5
+Key	7	A	4	GotoDesk 0 6
+Key	8	A	4	GotoDesk 0 7
+Key	9	A	4	GotoDesk 0 8
 
 # Close a window (Super+Q)
 Key Q	A	4 Close
