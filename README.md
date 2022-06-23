@@ -28,6 +28,8 @@ Thumbnailing:
 
 `hsetroot` is used for background images. If this is unavailable, it will fallback onto a blue background set using `xsetroot`.
 
+Support for `panther_launcher` is added by default in the submenus as "All Apps"
+
 ### Installing
 
 ```
