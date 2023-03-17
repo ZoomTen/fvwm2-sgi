@@ -1,6 +1,6 @@
 # FVWM2-SGI
 
-This is a FVWM2 theme that simulates the look and feel of the default window manager in Silicon Graphics systems, 4DWM. Or at least, my take on it anyway.
+This is a FVWM2 theme that simulates the look and feel of the default window manager in Silicon Graphics systems, 4DWM. Or at least, my take on it anyway. It is based on [Carl Svensson's](https://datagubbe.se/) SGI-esque config, linked at the bottom of this readme.
 
 ![FVWM2-SGI](.fvwm/screenshot.png)
 
